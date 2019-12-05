@@ -7,13 +7,12 @@ public class MyTask extends Thread {
 	
 	public MyTask(Counter c) {
 		this.c=c;
-		
 	}
 	
 	
 	
 	@Override
-	public void run() {
+	public synchronized void run() {
 		try {
 			Thread.sleep((long)(Math.random() * 1000));
 			c.increment();
