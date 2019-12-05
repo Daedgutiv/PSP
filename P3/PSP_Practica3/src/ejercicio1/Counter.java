@@ -1,14 +1,18 @@
 package ejercicio1;
 
 public class Counter {
-	
+
 	private int contador;
-	
+
 	public Counter() {
-		this.contador=0;
+		this.contador = 0;
 	}
+
+	// El synchronized hace que los hilos antes de entrar al bloque sincronizado
+	// pregunten si algún otro hilo que este usando ese bloque sincronizado, en cuyo
+	// caso esperará para ejecutarlo.
 	
-	public void increment() {
+	public synchronized void increment() {
 		this.contador++;
 	}
 

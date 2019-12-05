@@ -12,8 +12,9 @@ public class MyTask extends Thread {
 	
 	
 	@Override
-	public synchronized void run() {
+	public void run() {
 		try {
+			System.out.println(Thread.currentThread().getName());
 			Thread.sleep((long)(Math.random() * 1000));
 			c.increment();
 		} catch (InterruptedException e) {
