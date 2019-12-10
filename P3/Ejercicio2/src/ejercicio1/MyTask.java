@@ -16,7 +16,8 @@ public class MyTask extends Thread {
 		try {
 			System.out.println(Thread.currentThread().getName());
 			Thread.sleep((long)(Math.random() * 1000));
-			c.increment();
+				c.increment();
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

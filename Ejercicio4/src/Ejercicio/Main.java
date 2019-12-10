@@ -12,6 +12,13 @@ public class Main {
 		for (int i = 0; i < c; i++) {
 			b[i] = new ClassB(a);
 		}
+		for (int i = 0; i < c; i++) {
+			if (i == c - 1) {
+				b[i].setNext(b[0]);
+			} else {
+				b[i].setNext(b[i + 1]);
+			}
+		}
 
 		Thread[] hilos = new Thread[c];
 
@@ -19,6 +26,7 @@ public class Main {
 			hilos[i] = new Thread(b[i]);
 			hilos[i].start();
 		}
+		
 	}
 
 }

@@ -6,19 +6,21 @@ public class Counter {
 
 	// Con AtomicInteger se actualiza atómicamente lo que hace que el contador no
 	// falle al intentar acceder varios hilos a la vez
-	
-	private AtomicInteger contador;
+
+	private int contador;
 
 	public Counter() {
-		this.contador = new AtomicInteger(0);
+		this.contador = 0;
 	}
 
-	public void increment() {
-		this.contador.getAndIncrement();
+	// Con el synchronized cuenta bien otra vez ya que no pueden intentar escribir
+	// varios hilos a la vez
+	public synchronized void increment() {
+		this.contador++;
 	}
 
 	public int getContador() {
-		return contador.get();
+		return contador;
 	}
 
 }
