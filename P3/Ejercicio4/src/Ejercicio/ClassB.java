@@ -15,8 +15,6 @@ public class ClassB implements Runnable {
 	public void run() {
 
 		while (aux) {
-			
-			
 			synchronized (this) {
 				try {
 					wait();

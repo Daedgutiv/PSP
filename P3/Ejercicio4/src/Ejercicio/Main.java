@@ -2,7 +2,7 @@ package Ejercicio;
 
 public class Main {
 
-	private final static int HILOS = 20;
+	private final static int HILOS = 7;
 	public final static int Contador = 10;
 
 	public static void main(String[] args) {
@@ -26,10 +26,10 @@ public class Main {
 			hilos[i] = new Thread(b[i]);
 			hilos[i].start();
 		}
-		
-		hilos[0].interrupt();
-		
 
+		synchronized (b[0]) {
+			b[0].notify();
+		}
 	}
 
 }
