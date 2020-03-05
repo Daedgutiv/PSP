@@ -36,7 +36,9 @@ public class ListaDeClientes {
 	}
 
 	public static boolean enviarMensaje(Long id, String mensaje) {
-
+		
+		
+		return true;
 	}
 
 	public static int getPositionById(Long id) {

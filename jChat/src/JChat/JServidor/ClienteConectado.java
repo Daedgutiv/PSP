@@ -4,7 +4,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
 
-public class ClienteConectado {
+public class ClienteConectado implements Runnable {
 	
 	private String nickName;
 	private Long id;
